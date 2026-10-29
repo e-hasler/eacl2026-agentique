@@ -26,3 +26,7 @@ data/corpus/grc_sample.tsv
 results/grc_sample.tsv
 results/incorrect_grc_sample.tsv
 ```
+
+## Python
+- uv add, uv run python, uv run pytest. Never pip, never bare python.
+- Never modify uv.lock or .venv/.
