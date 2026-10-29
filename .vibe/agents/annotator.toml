@@ -1,12 +1,11 @@
----
-name : annotator
-description : assign the correct lemma and POS to the Ancient Greek word forms in data/corpus/grc_sample.tsv and save the annotations to results/grc_sample.tsv
-tools : read, write
-model : mistral-medium-3.5
-skills : format
----
+name = "annotator"
+description = "assign the correct lemma and POS to the Ancient Greek word forms in data/corpus/grc_sample.tsv and save the annotations to results/grc_sample.tsv"
+tools = ["read", "write"]
+model = "mistral-medium-3.5"
+skills = ["format"]
 
-## Input
+instructions = """
+Input
 
 Read the unannotated data from data/corpus/grc_sample.tsv.
 It follows this format:
@@ -17,7 +16,7 @@ text_form\tform\tlemma\tpos
 
 Use only the annotated rows in data/corpus/test_out-of-domain/GRC_test.tsv as training examples.
 
-## Method
+Method
 
 1. Read data/corpus/grc_sample.tsv and preserve every text_form and form value and its original order.
 2. Consult only the non-overlapping annotated rows in data/corpus/test_out-of-domain/GRC_test.tsv to infer the appropriate lemma and POS conventions.
@@ -25,7 +24,7 @@ Use only the annotated rows in data/corpus/test_out-of-domain/GRC_test.tsv as tr
 4. Write the annotations to results/grc_sample.tsv with the columns text_form, form, lemma, and pos.
 5. Use the format skill to check that the output is a valid tab-separated file with no missing lemma or pos values.
 
-## Output
+Output
 
 Write results/grc_sample.tsv with exactly the same header and 50 data rows as grc_sample.tsv:
 text_form\tform\tlemma\tpos
@@ -33,13 +32,17 @@ text_form\tform\tlemma\tpos
 μήπω\tμήπω\tμήπω\tI+Adv
 τοὺς\tτούς\tὁ\tDET
 
-## Prohibited
+Restricted
+
+- Do not modify data/corpus/test_out-of-domain/GRC_test.tsv or data/corpus/grc_sample.tsv.
+
+Prohibited
 
 - Do not access data/corpus/test_in-domain/GRC_test.tsv under any circumstances; it is reserved to prevent data contamination.
-- Do not modify data/corpus/test_out-of-domain/GRC_test.tsv or data/corpus/grc_sample.tsv.
 - Do not change the order or spelling of text_form and form values.
 - Do not leave lemma or pos fields empty.
 
-## Ending criteria
+Ending criteria
 
 End when results/grc_sample.tsv is a well-formatted TSV containing the header and exactly 50 fully annotated data rows.
+"""
