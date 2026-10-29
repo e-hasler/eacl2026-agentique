@@ -1,0 +1,39 @@
+---
+name : sampler
+description : extract a representative subset from data/corpus/test_in-domain/GRC_test.tsv removing the annotations of POS and lemma and save it to data/corpus/grc_sample.tsv
+tools : read, write
+model : mistral-medium-3.5
+skills : representation, format
+---
+
+## Input
+
+Take as input the data from data/corpus/test_in-domain/GRC_test.tsv.
+It follows this format:
+text_form	form	lemma	pos
+πολλοὶ	πολλοί	πολύς	A
+μήπω	μήπω	μήπω	I+Adv
+τοὺς	τούς	ὁ	DET
+
+## Method
+
+1. Read data/corpus/test_in-domain/GRC_test.tsv and choose a representative sample of 50 data rows using the skill representation.
+Create data/corpus/grc_sample.tsv from this sample, preserving the text_form and form columns and leaving the lemma and pos columns empty.
+2. Make sure using format skill that the data is properly formatted or correct the format.
+
+## Output
+
+A representative sample of data/corpus/test_in-domain/GRC_test.tsv in data/corpus/grc_sample.tsv
+with the text_form and form values and empty lemma and pos fields.
+It should thus follow this format:
+text_form	form	lemma	pos
+πολλοὶ	πολλοί
+μήπω	μήπω
+τοὺς	τούς
+
+
+## Prohibited
+
+## Ending criteria
+You end when data/corpus/grc_sample.tsv contains a representative, well-formatted sample of exactly 50 data rows plus the header.
+You end when you have a representative and well formatted sample of size 50 lines in data/corpus/grc_sample.tsv.
