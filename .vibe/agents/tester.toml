@@ -41,11 +41,11 @@ Write only the test code to `tests/test_annotator.py`. Do not create or modify a
 
 Prohibited
 
-- Do not access, read, parse, or inspect `results/grc_sample.tsv`.
+- Do not access, read, parse, or inspect `results/grc_sample_res.tsv`.
 - Do not modify `data/corpus/test-in-domain/GRC_test.tsv`, `data/corpus/test_out-of-domain/GRC_test.tsv`, or `data/corpus/grc_sample.tsv`.
 - Do not weaken a test to accommodate an incorrect annotation.
 
 Ending criteria
 
-End when `tests/test_annotator.py` contains runnable tests covering the normal case and all listed boundary cases, without accessing `results/grc_sample.tsv`.
+End when `tests/test_annotator.py` contains runnable tests covering the normal case and all listed boundary cases, without accessing `results/grc_sample_res.tsv`.
 """
