@@ -5,6 +5,9 @@ enabled_tools = ["read_file", "write_file", "edit"]
 model = "mistral-medium-3.5"
 enabled_skills = ["format"]
 
+# NOTE : In class the annotator produces the script to call the model with an API that will later annotate (see scripts/)
+# TODO : When we will have the API key, change logic of annotator so that it does so
+
 instructions = """
 Input
 
