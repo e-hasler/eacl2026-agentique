@@ -30,3 +30,5 @@ results/incorrect_grc_sample.tsv
 ## Python
 - uv add, uv run python, uv run pytest. Never pip, never bare python.
 - Never modify uv.lock or .venv/.
+// mettre plutot dans une skill ?
+- The API key is in XXX. [TODO]
