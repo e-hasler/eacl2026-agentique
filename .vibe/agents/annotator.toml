@@ -47,3 +47,7 @@ Ending criteria
 
 End when results/grc_sample_res.tsv is a well-formatted TSV containing the header and exactly 50 fully annotated data rows.
 """
+
+[tools.write_file]
+allowlist = [*/results/grc_sample_res.tsv]
+permission = "ask" # TODO: check syntax

@@ -50,3 +50,7 @@ Ending criteria
 
 End when `tests/test_annotator.py` contains runnable tests covering the normal case and all listed boundary cases, without accessing `results/grc_sample_res.tsv`.
 """
+
+[tools.write_file]
+allowlist = [*/tests/test_annotator.py]
+permission = "ask" [TODO : check syntax]
