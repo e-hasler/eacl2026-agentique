@@ -1,6 +1,7 @@
+agent_type = "subagent"
 name = "tester"
 description = "write independent tests for the Ancient Greek annotation workflow without reading the annotator output"
-tools = ["read_file", "write_file", "edit"]
+enabled_tools = ["read_file", "write_file", "edit"]
 model = "mistral-medium-3.5"
 skills = ["format"]
 
