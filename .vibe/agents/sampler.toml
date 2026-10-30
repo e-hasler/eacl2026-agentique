@@ -3,7 +3,7 @@ name = "sampler"
 description = "extract a representative subset from data/corpus/test_in-domain/GRC_test.tsv removing the annotations of POS and lemma and save it to data/corpus/grc_sample.tsv"
 enabled_tools = ["read_file", "write_file", "edit"]
 model = "mistral-medium-3.5"
-skills = ["representation", "format"]
+enabled_skills = ["representation", "format"]
 
 instructions = """
 Input

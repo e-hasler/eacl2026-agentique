@@ -3,7 +3,7 @@ name = "tester"
 description = "write independent tests for the Ancient Greek annotation workflow without reading the annotator output"
 enabled_tools = ["read_file", "write_file", "edit"]
 model = "mistral-medium-3.5"
-skills = ["format"]
+enabled_skills = ["format"]
 
 instructions = """
 Mission
