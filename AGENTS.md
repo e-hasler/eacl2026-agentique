@@ -3,6 +3,12 @@ Evaluate the ability of a sub-agent to associate the correct lemma and POS with 
 
 ## Structure
 ```text
+.vibe/
+├── config.toml                 # Runtime model and head-agent tools
+└── agents/
+	├── sampler.toml             # Sampling subagent
+	├── tester.toml              # Testing subagent
+	└── annotator.toml           # Annotation subagent
 data/corpus/
 ├── test_in-domain/GRC_test.tsv  # Annotated source data and reference labels
 └── grc_sample.tsv               # Sample to annotate
